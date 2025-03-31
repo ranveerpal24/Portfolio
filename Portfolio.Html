@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranveer pal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: rgb(222, 210, 190);
+            color: aliceblue;
+        }
+
+        .head {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem;
+            background-color: rgba(18, 108, 219, 0.6);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            color: aliceblue;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar a {
+            font-size: 1.8rem;
+            color: white;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease-in-out;
+            border-bottom: 3px solid transparent;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #ff6347; /* Tomato color */
+            border-bottom: 3px solid #3d6ec3; /* OrangeRed color */
+        }
+
+        #menu-icon {
+            font-size: 3.6rem;
+            color: #f3f1f1; /* Tomato color */
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 10rem;
+        }
+
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        span {
+            color: #936666; /* Tomato color */
+        }
+
+        .logo span {
+            color: #c8cd92; /* Tomato color */
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+            font-size: 3.5rem;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 7rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            line-height: 1;
+            margin: 10px;
+        }
+
+        .home-img img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 0 25px #f8f7f7; /* OrangeRed color */
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            object-fit: cover;
+            margin-top: 40px;
+        }
+
+        .home-img img:hover {
+            color: #f6f1f0; /* Tomato color */
+            box-shadow: 0 0 10px #f1f0f0; /* OrangeRed color */
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 500;
+            max-width: 1000px;
+            margin: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4.5rem;
+            height: 4.5rem;
+            background: transparent;
+            border: 2px solid #f7f5f5; /* OrangeRed color */
+            font-size: 2rem;
+            border-radius: 50%;
+            color: #090909; /* Tomato color */
+            margin: 3rem 1.5rem 3rem 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            color: white;
+            transform: scale(1.3);
+            background-color: rgb(152, 188, 179); /* Tomato color */
+        }
+
+        .text-Animation {
+            font-size: 34px;
+            font-weight: 600;
+            min-width: 280px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .text-Animation span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: typing 20s steps(15) infinite, cursor 0.6s infinite;
+        }
+
+        .text-Animation span::before {
+            content: 'Frontend Web Developer';
+            color: #fbf7f7;
+            animation: words 20s infinite;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes cursor {
+            0% {
+                border-left: 2px solid transparent;
+            }
+
+            50% {
+                border-left: 2px solid #ff6347;
+            }
+
+            100% {
+                border-left: 2px solid transparent;
+            }
+        }
+
+        @keyframes words {
+            0%, 20% {
+                content: "Frontend Web Developer";
+            }
+
+            21%, 40% {
+                content: "Graphic Designer";
+            }
+
+            41%, 60% {
+                content: "UI/UX Designer";
+            }
+
+            61%, 80% {
+                content: "Full Stack Web Developer";
+            }
+
+            81%, 100% {
+                content: "Software Tester";
+            }
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15rem;
+            background-color:rgb(152, 188, 179);
+            color: white;
+        }
+
+        .about h1 span {
+            color: #ff6347;
+            text-shadow: 0 0 50px chocolate;
+        }
+
+        .about-img img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 0 25px #faf9f9; /* OrangeRed color */
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            object-fit: cover;
+            margin-top: 40px;
+        }
+
+        .about-img img:hover {
+            color: #f4f2f1; /* Tomato color */
+            box-shadow: 0 0 100px #f5f3f2; /* OrangeRed color */
+        }
+
+        .service {
+            background-color: rgb(152, 188, 179);
+            color: aliceblue;
+            padding: 4rem 0;
+        }
+
+        .service h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .service h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .service p {
+            font-size: 1.8rem;
+            font-weight: 500;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6rem;
+        }
+
+        .service-box {
+            background-color: #0a0a0a;
+            color: white;
+            height: 450px;
+            width: 300px;
+            border-radius: 1.5rem;
+            gap: 3rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0 0 15px #f9f8f8; /* OrangeRed color */
+        }
+
+        .service-box:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 0 0 25px #f1f0ef;
+        }
+
+        .service-box .service-info {
+            text-align: center;
+        }
+
+        .service-info h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-info p {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .about, .service {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .contact {
+            padding: 4rem 0;
+            background-color: rgb(152, 188, 179);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h1 {
+            margin-bottom: 2rem;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #faf8f7; /* OrangeRed color */
+            background-color:#f6f0ed ;
+            color: black;
+            font-size: 1.2rem;
+        }
+
+        .contact form button {
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: #f5efee; /* Tomato color */
+            color: black;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .contact form button:hover {
+            background-color: #060606;
+            color: #f1f0ef; /* OrangeRed color */
+        }
+
+        footer {
+            background-color: rgb(152, 188, 179);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #020202; /* Tomato color */
+            margin: 0 1rem;
+            transition: 0.3s ease-in-out;
+        }
+
+        footer a:hover {
+            color: #e9e2e0; /* OrangeRed color */
+        }
+
+        footer .social-icons a {
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="head">
+        <div class="logo">Ranveer <span>Pal</span></div>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+         
+        </div>
+    </header>
+
+    <section id="home" class="home">
+        <div class="home-content">
+            <h2>Hello, I'm</h2>
+            <h1>RANVEER PAL</h1>
+            <p>Hi,I’m <span >Ranveer Pal</span>, a passionate individual with a curious mind and a drive to innovate. I believe in continuous learning and strive to contribute to impactful projects that make a difference. My journey is about exploring new opportunities, overcoming challenges, and growing both personally and professionally. I am dedicated to making meaningful contributions and leaving a positive impact in everything I do.</p>
+            
+            </div>
+            <div class="social-icons">
+               <a href="https://www.linkedin.com/in/ranveer-pal-3rd-695168253?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bl1AbzR7MR4Kun0HJn0340g%3D%3D"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/ranveerpal24"><i class="fa-brands fa-github"></i></a>
+                
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="about-img">
+            <!-- <img src="C:\Users\Ranveer Pal\Alfido Tech\WhatsApp Image  Ranveer.jpg" alt="About Me"> -->
+        </div>
+    
+        <div class="about-content">
+            <h1>About Me</h1>
+            <p>I’m Pursuing B.Tech  in the field of  IT at <span >University Institute of Technology Barkatullah University</span>,Bhopal with expertise in <span > Java </span> and learnt, Java ,HTML5, CSS3, JavaScript. I’ve worked on impactful  projects <span > Sorting Visualizer</span>.
+                <br> <br>
+                 <span ></span> </p>
+        </div>
+    </section>
+
+    <section id="services" class="service">
+        <h1>My Services</h1>
+        <h2>What I Offer</h2>
+        <div class="service-container">
+           
+            <div class="service-box">
+                <div class="service-info">
+                    <h3>Graphic Design</h3>
+                    <p>I am a creative Graphic Design with a keen eye for detail and a passion for transforming ideas into visually appealing designs. I specialize in creating impactful projects, branding, and digital content that communicates messages effectively.</p>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-info">
+                    <h3>Java</h3>
+                    <p>I am a Java developer with a passion for creating efficient, high-performance applications. I specialize in solving complex problems and optimizing code for speed and memory management.</p>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-info">
+                    <h3>Frontend Development</h3>
+                    <p>II’m a Frontend Developer dedicated to building responsive, user-friendly websites with HTML, CSS, and JavaScript, focusing on clean code and seamless user experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h1>Contact Me</h1>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+           
+            <a href="https://github.com/ranveerpal24"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ranveer-pal-3rd-695168253?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bl1AbzR7MR4Kun0HJn0340g%3D%3D"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2025 Ranveer. All rights reserved.</p>
+   </footer>
+</body>
+    
+   </html>
